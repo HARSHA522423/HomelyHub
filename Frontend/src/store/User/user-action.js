@@ -23,13 +23,15 @@ export const getLogin=(user) => async(dispatch) =>{
     }
 }
 
-export const currentUser =() => async(dispatch) =>{
+export const currentUser =() => async(dispatch, getState) =>{
     try{
      dispatch(userActions.getCurrentRequest());
      const {data} = await axiosInstance.get("/v1/rent/user/me");
      dispatch(userActions.getCurrentUser(data.user))
     }catch{
-        dispatch(userActions.getLogout(null));
+        if (!getState().user.user) {
+            dispatch(userActions.getLogout(null));
+        }
     }
 }
 
