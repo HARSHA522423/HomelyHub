@@ -1,0 +1,134 @@
+/* ==========================================================================
+   HOMELYHUB - PHOTO GALLERY MODAL / LIGHTBOX
+   ========================================================================== */
+
+.hh-gallery-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 25, 18, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2500;
+  padding: 1.5rem;
+}
+
+.hh-gallery-modal {
+  background: #ffffff;
+  width: 100%;
+  max-width: 62rem;
+  height: 90vh;
+  border-radius: var(--hh-radius-xl);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.hh-gallery-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 2rem;
+  border-bottom: 1px solid var(--hh-border);
+  background: #ffffff;
+  z-index: 5;
+}
+
+.hh-gallery-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--hh-dark);
+  margin: 0;
+}
+
+.hh-gallery-title span {
+  font-weight: 500;
+  color: var(--hh-text-muted);
+  font-size: 0.95rem;
+}
+
+.hh-gallery-close-btn {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: var(--hh-bg);
+  border: 1px solid var(--hh-border);
+  color: var(--hh-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--hh-transition);
+}
+
+.hh-gallery-close-btn:hover {
+  background: #e2ede7;
+  transform: rotate(90deg);
+}
+
+.hh-gallery-body {
+  padding: 2rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.hh-gallery-images-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.hh-gallery-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hh-gallery-figure img {
+  width: 100%;
+  height: 22rem;
+  object-fit: cover;
+  border-radius: var(--hh-radius-md);
+  box-shadow: 0 4px 14px rgba(15, 35, 25, 0.08);
+}
+
+.hh-gallery-figure figcaption {
+  font-size: 0.8rem;
+  color: var(--hh-text-secondary);
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .hh-gallery-backdrop {
+    padding: 0;
+  }
+
+  .hh-gallery-modal {
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .hh-gallery-header {
+    padding: 1rem 1.25rem;
+  }
+
+  .hh-gallery-body {
+    padding: 1rem;
+  }
+
+  .hh-gallery-images-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .hh-gallery-figure img {
+    height: 16rem;
+  }
+}

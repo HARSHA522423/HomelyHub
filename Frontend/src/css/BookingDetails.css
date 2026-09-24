@@ -1,0 +1,225 @@
+/* ==========================================================================
+   HOMELYHUB - BOOKING DETAILS VOUCHER STYLING
+   ========================================================================== */
+
+.booking-details-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 5rem;
+  width: 100%;
+}
+
+.details-nav-bar {
+  margin-bottom: 1.5rem;
+}
+
+.details-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--hh-text-secondary);
+  transition: var(--hh-transition);
+}
+
+.details-back-btn:hover {
+  color: var(--hh-green);
+  transform: translateX(-3px);
+}
+
+.details-back-btn .material-symbols-outlined {
+  font-size: 1.15rem;
+}
+
+/* Confirmed Card */
+.booking-confirmed-card {
+  background: linear-gradient(135deg, #14432c 0%, #0f9d58 100%);
+  color: #ffffff;
+  border-radius: var(--hh-radius-xl);
+  padding: 2.25rem 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--hh-shadow-md);
+}
+
+.confirmed-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.85rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: var(--hh-radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.85rem;
+}
+
+.confirmed-badge .material-symbols-outlined {
+  font-size: 1.1rem;
+}
+
+.confirmed-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.02em;
+}
+
+.confirmed-address {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.confirmed-address .material-symbols-outlined {
+  font-size: 1.15rem;
+}
+
+/* Summary Grid */
+.booking-summary-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.summary-left-card,
+.summary-right-card {
+  background: var(--hh-surface);
+  border: 1px solid var(--hh-border);
+  border-radius: var(--hh-radius-xl);
+  padding: 1.75rem;
+  box-shadow: var(--hh-shadow-sm);
+}
+
+.card-heading {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--hh-dark);
+  margin-bottom: 1.25rem;
+}
+
+.stay-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.stay-meta-box {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  background: var(--hh-surface-subtle);
+  border: 1px solid var(--hh-border);
+  border-radius: var(--hh-radius-md);
+}
+
+.box-icon {
+  font-size: 1.4rem;
+  color: var(--hh-green);
+}
+
+.box-lbl {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--hh-text-muted);
+  display: block;
+}
+
+.box-val {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--hh-dark);
+  margin: 0;
+}
+
+.status-paid {
+  color: var(--hh-green);
+}
+
+/* Receipt */
+.payment-receipt-box {
+  background: var(--hh-surface-subtle);
+  border: 1px solid var(--hh-border);
+  border-radius: var(--hh-radius-md);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.receipt-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  color: var(--hh-text-secondary);
+}
+
+.receipt-total {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--hh-forest);
+}
+
+.paid-tag {
+  background: var(--hh-green-light);
+  color: var(--hh-green);
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--hh-radius-full);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.receipt-divider {
+  height: 1px;
+  background-color: var(--hh-border);
+  margin: 0.25rem 0;
+}
+
+.receipt-note {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: var(--hh-text-muted);
+}
+
+.receipt-note .material-symbols-outlined {
+  font-size: 1rem;
+}
+
+/* Photos Section */
+.booking-photos-section {
+  background: var(--hh-surface);
+  border: 1px solid var(--hh-border);
+  border-radius: var(--hh-radius-xl);
+  padding: 1.75rem;
+  box-shadow: var(--hh-shadow-sm);
+}
+
+@media (max-width: 768px) {
+  .booking-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stay-meta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .confirmed-title {
+    font-size: 1.5rem;
+  }
+
+  .booking-confirmed-card {
+    padding: 1.5rem;
+  }
+}

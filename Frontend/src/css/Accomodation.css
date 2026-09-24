@@ -1,0 +1,465 @@
+/* ==========================================================================
+   HOMELYHUB - MY ACCOMMODATIONS & LISTING FORM STYLING
+   ========================================================================== */
+
+.accom-dashboard-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.accom-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.add-place-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.75rem 1.35rem;
+  border-radius: var(--hh-radius-full);
+  background: var(--hh-green);
+  color: #ffffff !important;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(15, 157, 88, 0.25);
+  transition: var(--hh-transition);
+}
+
+.add-place-cta-btn:hover {
+  background: var(--hh-green-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(15, 157, 88, 0.35);
+}
+
+.add-place-cta-btn .material-symbols-outlined {
+  font-size: 1.25rem;
+}
+
+/* Cards List */
+.accom-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hh-accom-card {
+  background: var(--hh-surface);
+  border: 1px solid var(--hh-border);
+  border-radius: var(--hh-radius-lg);
+  box-shadow: var(--hh-shadow-sm);
+  display: flex;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.hh-accom-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--hh-shadow-hover);
+  border-color: var(--hh-green-border);
+}
+
+.accom-img-wrap {
+  position: relative;
+  width: 18rem;
+  min-height: 12.5rem;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: #eef2ef;
+}
+
+.accom-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.hh-accom-card:hover .accom-img {
+  transform: scale(1.04);
+}
+
+.accom-active-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--hh-radius-full);
+  background: rgba(15, 157, 88, 0.92);
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.accom-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  min-width: 0;
+}
+
+.accom-top-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.accom-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--hh-dark);
+  margin: 0 0 0.25rem 0;
+}
+
+.accom-city {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.88rem;
+  color: var(--hh-text-secondary);
+  margin: 0;
+}
+
+.accom-city .material-symbols-outlined {
+  font-size: 1rem;
+  color: var(--hh-green);
+}
+
+.accom-price-wrap {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.accom-price-wrap .price-lbl {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--hh-text-muted);
+  display: block;
+}
+
+.accom-price-wrap .price-num {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--hh-forest);
+}
+
+.accom-meta-chips {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 1.1rem 0;
+  flex-wrap: wrap;
+}
+
+.meta-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.85rem;
+  background: var(--hh-surface-subtle);
+  border: 1px solid var(--hh-border);
+  border-radius: var(--hh-radius-full);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--hh-text-secondary);
+}
+
+.meta-chip .material-symbols-outlined {
+  font-size: 1rem;
+  color: var(--hh-green);
+}
+
+.accom-action-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--hh-border);
+}
+
+.view-listing-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--hh-green);
+  transition: var(--hh-transition);
+}
+
+.view-listing-btn:hover {
+  color: var(--hh-green-hover);
+  transform: translateX(2px);
+}
+
+.view-listing-btn .material-symbols-outlined {
+  font-size: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   ACCOMMODATION FORM PAGE (Hosting a new place)
+   -------------------------------------------------------------------------- */
+.accf-page {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 5rem;
+}
+
+.accf-hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.accf-hero h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--hh-forest);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.accf-hero h1 .material-symbols-outlined {
+  font-size: 2rem;
+  color: var(--hh-green);
+}
+
+.accf-hero p {
+  color: var(--hh-text-secondary);
+  font-size: 1rem;
+  max-width: 32rem;
+  margin: 0 auto;
+}
+
+.accf-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.accf-card {
+  background: var(--hh-surface);
+  border: 1px solid var(--hh-border);
+  border-radius: var(--hh-radius-xl);
+  padding: 2rem;
+  box-shadow: var(--hh-shadow-sm);
+}
+
+.accf-sec {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.accf-sec .material-symbols-outlined {
+  font-size: 1.35rem;
+  color: var(--hh-green);
+}
+
+.accf-sec h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--hh-dark);
+  margin: 0;
+}
+
+.accf-hint {
+  font-size: 0.82rem;
+  color: var(--hh-text-muted);
+}
+
+.accf-field {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.accf-field label {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--hh-dark);
+  margin-bottom: 0.4rem;
+}
+
+.accf-input {
+  width: 100%;
+  padding: 0.75rem 0.95rem;
+  border: 1.5px solid var(--hh-border);
+  border-radius: var(--hh-radius-md);
+  font-size: 0.95rem;
+  background: var(--hh-surface);
+  color: var(--hh-dark);
+  transition: var(--hh-transition);
+}
+
+.accf-input:focus {
+  outline: none;
+  border-color: var(--hh-green);
+  box-shadow: 0 0 0 3px rgba(15, 157, 88, 0.12);
+}
+
+.accf-input::placeholder {
+  color: var(--hh-text-muted);
+  font-size: 0.9rem;
+}
+
+.accf-textarea {
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.accf-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.accf-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.accf-desc-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.accf-ai {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  height: 2.2rem;
+  padding: 0 1rem;
+  border: none;
+  border-radius: var(--hh-radius-full);
+  background: linear-gradient(135deg, #0f9d58 0%, #0d884c 100%);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(15, 157, 88, 0.25);
+  transition: var(--hh-transition);
+}
+
+.accf-ai:hover:enabled {
+  background: var(--hh-green-hover);
+  transform: translateY(-1px);
+}
+
+.accf-save {
+  width: 100%;
+  padding: 1.05rem;
+  border: none;
+  border-radius: var(--hh-radius-md);
+  background: var(--hh-green);
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(15, 157, 88, 0.25);
+  transition: var(--hh-transition);
+}
+
+.accf-save:hover:enabled {
+  background: var(--hh-green-hover);
+  transform: translateY(-1px);
+}
+
+/* Address & Amenities Inside Card */
+.accf-card .address-fields {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.accf-card .address-fields > input {
+  width: 100%;
+  padding: 0.75rem 0.95rem;
+  border: 1.5px solid var(--hh-border);
+  border-radius: var(--hh-radius-md);
+  font-size: 0.95rem;
+}
+
+.accf-card .address-fields > input:focus {
+  outline: none;
+  border-color: var(--hh-green);
+  box-shadow: 0 0 0 3px rgba(15, 157, 88, 0.12);
+}
+
+.accf-card .perks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+}
+
+.accf-card .checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 0.9rem;
+  border: 1.5px solid var(--hh-border);
+  border-radius: var(--hh-radius-md);
+  cursor: pointer;
+  transition: var(--hh-transition);
+}
+
+.accf-card .checkbox-container:hover {
+  background: var(--hh-green-subtle);
+  border-color: var(--hh-green-border);
+}
+
+.accf-card .checkbox-container input[type="checkbox"] {
+  accent-color: var(--hh-green);
+  width: 1.1rem;
+  height: 1.1rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hh-accom-card {
+    flex-direction: column;
+  }
+
+  .accom-img-wrap {
+    width: 100%;
+    height: 12rem;
+  }
+
+  .accom-top-row {
+    flex-direction: column;
+  }
+
+  .accom-price-wrap {
+    text-align: left;
+  }
+
+  .accf-grid-2,
+  .accf-grid-4,
+  .accf-card .address-fields {
+    grid-template-columns: 1fr;
+  }
+}

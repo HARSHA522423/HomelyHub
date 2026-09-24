@@ -1,0 +1,83 @@
+/* ==========================================================================
+   HOMELYHUB - DASHBOARD TABS / PROGRESS STEPS
+   ========================================================================== */
+
+.dashboard-nav-wrapper {
+  max-width: 1100px;
+  margin: 1.5rem auto 2rem;
+  padding: 0 1.5rem;
+  width: 100%;
+}
+
+.dashboard-tabs {
+  display: flex;
+  align-items: center;
+  background: var(--hh-surface);
+  border: 1px solid var(--hh-border);
+  border-radius: var(--hh-radius-full);
+  padding: 0.35rem;
+  box-shadow: var(--hh-shadow-xs);
+  gap: 0.35rem;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.dashboard-tab-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.35rem;
+  border-radius: var(--hh-radius-full);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--hh-text-secondary);
+  text-decoration: none;
+  transition: var(--hh-transition);
+}
+
+.dashboard-tab-link .tab-icon {
+  font-size: 1.15rem;
+  color: var(--hh-text-muted);
+  transition: var(--hh-transition);
+}
+
+.dashboard-tab-link:hover {
+  color: var(--hh-forest);
+  background: var(--hh-green-subtle);
+}
+
+.dashboard-tab-link:hover .tab-icon {
+  color: var(--hh-green);
+}
+
+.dashboard-tab-link.active-tab {
+  background: var(--hh-green);
+  color: #ffffff;
+  box-shadow: 0 3px 10px rgba(15, 157, 88, 0.28);
+}
+
+.dashboard-tab-link.active-tab .tab-icon {
+  color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .dashboard-tabs {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .dashboard-tab-link {
+    padding: 0.55rem 0.85rem;
+    font-size: 0.8rem;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .dashboard-tab-link .tab-text {
+    display: none;
+  }
+
+  .dashboard-tab-link .tab-icon {
+    font-size: 1.3rem;
+  }
+}

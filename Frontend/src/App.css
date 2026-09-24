@@ -1,0 +1,10 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--hh-bg);
+}
+
+.App > .row:first-of-type {
+  flex: 1 0 auto;
+}
