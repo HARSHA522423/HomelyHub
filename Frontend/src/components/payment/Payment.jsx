@@ -9,6 +9,7 @@ import {
   selectPaymentStatus,
   paymentActions,
 } from "../../store/Payment/payment-slice";
+import { currentUser } from "../../store/User/user-action";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import toast from "react-hot-toast";
@@ -18,6 +19,10 @@ const Payment = () => {
   const navigate = useNavigate();
   const { propertyId } = useParams();
   const [showPaymentGateaway, setShowPaymentGateaway] = useState(false);
+  const [authChecking, setAuthChecking] = useState(true);
+  const [authError, setAuthError] = useState(null);
+
+  const { sessionVerified } = useSelector((state) => state.user);
 
   const {
     checkinDate,
@@ -30,7 +35,34 @@ const Payment = () => {
 
   const { loading, error, orderData } = useSelector(selectPaymentStatus);
 
+  useEffect(() => {
+    let active = true;
+
+    if (sessionVerified) {
+      setAuthChecking(false);
+      setAuthError(null);
+      return () => {
+        active = false;
+      };
+    }
+
+    dispatch(currentUser()).then((authenticated) => {
+      if (!active) return;
+
+      setAuthChecking(false);
+      if (!authenticated) {
+        setAuthError("You are not logged in!! Please login to access");
+      }
+    });
+
+    return () => {
+      active = false;
+    };
+  }, [dispatch, sessionVerified]);
+
   const handleBooking = async () => {
+    if (authChecking || authError) return;
+
     const paymentData = {
       amount: totalPrice,
       propertyId,
@@ -269,10 +301,10 @@ const Payment = () => {
           </div>
         </div>
 
-        {error && (
+        {(authError || error) && (
           <div className="payment-error-box">
             <span className="material-symbols-outlined">error</span>
-            <span>{error}</span>
+            <span>{authError || error}</span>
           </div>
         )}
 
@@ -281,10 +313,12 @@ const Payment = () => {
           <button
             type="button"
             onClick={handleBooking}
-            disabled={loading}
+            disabled={loading || authChecking || Boolean(authError)}
             className="checkout-pay-btn"
           >
-            {loading ? (
+            {authChecking ? (
+              <span>Checking your session...</span>
+            ) : loading ? (
               <>
                 <span className="payment-btn-spinner" />
                 <span>Processing Order...</span>

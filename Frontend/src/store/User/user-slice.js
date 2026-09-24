@@ -5,6 +5,7 @@ const userSlice = createSlice({
     name: "user",
     initialState:{
         isAuthenticated:false,
+        sessionVerified:false,
         loading:false,
         user:null,
         errors:null,
@@ -17,6 +18,7 @@ const userSlice = createSlice({
         getSignupDetails(state,action){
             state.user=action.payload,
             state.isAuthenticated=true,
+            state.sessionVerified=false,
             state.loading=false
         },
         getLoginRequest(state){
@@ -25,6 +27,7 @@ const userSlice = createSlice({
         getLoginDetails(state,action){
             state.user=action.payload,
             state.isAuthenticated=true,
+            state.sessionVerified=false,
             state.loading=false
         },
         getError(state,action){
@@ -40,6 +43,7 @@ const userSlice = createSlice({
         getCurrentUser(state,action){
             state.user=action.payload,
             state.isAuthenticated=true,
+            state.sessionVerified=true,
             state.loading=false
         },
         getLogoutRequest(state){
@@ -48,6 +52,7 @@ const userSlice = createSlice({
         getLogout(state,action){
             state.user=action.payload,
             state.isAuthenticated=false,
+            state.sessionVerified=false,
             state.loading=false
         },
         getPasswordRequest(state){

@@ -27,11 +27,13 @@ export const currentUser =() => async(dispatch, getState) =>{
     try{
      dispatch(userActions.getCurrentRequest());
      const {data} = await axiosInstance.get("/v1/rent/user/me");
-     dispatch(userActions.getCurrentUser(data.user))
+     dispatch(userActions.getCurrentUser(data.user));
+     return true;
     }catch{
         if (!getState().user.user) {
             dispatch(userActions.getLogout(null));
         }
+        return false;
     }
 }
 
