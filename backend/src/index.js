@@ -11,6 +11,25 @@ import { tripRouter } from "./routs/tripRouter.js";
 
 dotenv.config();
 const app = express();
+
+const allowedOrigins = [
+    "https://homelyhub-1-30tg.onrender.com",
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+];
+
+app.use(cors({
+    origin: (origin, callback) => {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+            return;
+        }
+
+        callback(null, false);
+    },
+    credentials: true,
+}));
+
 //express.json
 app.use(express.json({limit: "100mb"}))
 //url incoder
